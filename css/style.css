@@ -1,18 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  background-image: linear-gradient(to right bottom, #480528, #14274a);
+  background-image: radial-gradient(farthest-corner at 20% 45%, #480528, #14274a);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 2rem;
 }
 
 .nav__logo {
@@ -30,5 +40,63 @@ body {
   font-family: "Architects Daughter", cursive;
   text-transform: uppercase;
   color: #fff;
+}
+
+.link-form {
+  padding: 5rem 6rem;
+}
+
+.link-form__heading {
+  font-size: 5rem;
+  color: #fff;
+  font-family: "Architects Daughter", cursive;
+}
+
+.link-form__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+}
+
+.link-form__form input {
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  margin-top: 2rem;
+  outline: none;
+  border: none;
+}
+
+.link-form__form button {
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  border-radius: 3rem;
+  margin-top: 5rem;
+  width: 10rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #fe2863;
+  color: #fff;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.7);
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  outline: none;
+  border: none;
+}
+
+.link-form__form button:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
 }
 /*# sourceMappingURL=style.css.map */
