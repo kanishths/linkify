@@ -22,10 +22,39 @@
       <div class="link-form">
         <h2 class="link-form__heading">Add to your list &rarr;</h2>
         <form class="link-form__form">
-          <input type="text" name="linkname" id="linkname" placeholder="Name" />
-          <input type="url" name="linkurl" id="linkurl" placeholder="Url" />
-          <button class="btn">Add</button>
+          <input
+            type="text"
+            name="linkname"
+            required
+            id="linkname"
+            placeholder="Name"
+          />
+          <input
+            type="url"
+            name="linkurl"
+            id="linkurl"
+            required
+            placeholder="Url"
+          />
+          <button id="submit" class="btn">Add</button>
         </form>
+      </div>
+
+      <div class="link-list">
+        <h2>Saved Links</h2>
+        <div class="link-list__links">
+          <div class="row">
+            <div class="row__col">
+              <a href="#">ONE</a>
+            </div>
+            <div class="row__col">
+              <a href="#">TWO</a>
+            </div>
+            <div class="row__col">
+              <a href="#">THREE</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </body>
