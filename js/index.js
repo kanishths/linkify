@@ -1,6 +1,7 @@
 const username = document.querySelector("#username");
 
 const btn = document.querySelector("#submit");
+const btnDelete = document.querySelector("#delete");
 const form = document.querySelector(".link-form__form");
 const row = document.querySelector(".row");
 const links = [];
@@ -29,7 +30,7 @@ if (localStorage.getItem("linkNames") !== null) {
   `;
 
     row.insertAdjacentHTML("beforeend", html);
-    console.log(urlArr[c]);
+
     links.push(urlArr[c]);
     names.push(element);
     c += 1;
@@ -60,4 +61,11 @@ form.addEventListener("submit", (e) => {
   } else {
     alert("name already taken");
   }
+});
+
+btnDelete.addEventListener("click", () => {
+  localStorage.removeItem("linkNames");
+  localStorage.removeItem("linkUrl");
+  localStorage.removeItem("linkifyUsername");
+  location.reload();
 });
