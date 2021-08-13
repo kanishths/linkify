@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
 
   const html = `
    <div class="row__col">
-      <a target="_blank" href="${linkUrl}">${linkName}</a>
+      <a target="_blank" href="${linkUrl}">${linkName} </a> <span>&rarr; </span>
     </div>
   `;
 
