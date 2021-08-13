@@ -133,6 +133,13 @@ body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       font-size: 2rem;
       color: $color-white;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      display: inline-block;
+      &:hover {
+        color: $color-black;
+        transform: scale(1.05);
+      }
     }
 
     & span {

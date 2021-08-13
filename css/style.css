@@ -130,6 +130,14 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
   color: #fff;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.row__col a:hover {
+  color: #000;
+  transform: scale(1.05);
 }
 
 .row__col span {

@@ -16,21 +16,48 @@ if (localStorage.getItem("linkifyUsername") === null) {
   username.innerHTML = `Hey, ${name}!`;
 }
 
+if (localStorage.getItem("linkNames") !== null) {
+  let nameArr = localStorage.getItem("linkNames");
+  let urlArr = localStorage.getItem("linkUrl");
+  nameArr = nameArr.split(",");
+  urlArr = urlArr.split(",");
+  nameArr.forEach((element, c = 0) => {
+    const html = `
+   <div class="row__col">
+      <a target="_blank" href="${urlArr[c]}">${element} </a> <span>&rarr; </span>
+    </div>
+  `;
+
+    row.insertAdjacentHTML("beforeend", html);
+    console.log(urlArr[c]);
+    links.push(urlArr[c]);
+    names.push(element);
+    c += 1;
+  });
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const linkName = document.querySelector("#linkname").value;
   const linkUrl = document.querySelector("#linkurl").value;
 
-  links.push(linkUrl);
-  names.push(linkName);
+  let found = names.find((element) => element === linkName);
 
-  const html = `
+  if (!found) {
+    links.push(linkUrl);
+    names.push(linkName);
+
+    const html = `
    <div class="row__col">
       <a target="_blank" href="${linkUrl}">${linkName} </a> <span>&rarr; </span>
     </div>
   `;
 
-  row.insertAdjacentHTML("beforeend", html);
-  localStorage.setItem("linkNames", names);
-  localStorage.setItem("linkUrl", links);
+    row.insertAdjacentHTML("beforeend", html);
+    localStorage.setItem("linkNames", names);
+    localStorage.setItem("linkUrl", links);
+  } else {
+    alert("name already taken");
+  }
 });
