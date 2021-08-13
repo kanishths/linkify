@@ -97,7 +97,7 @@ body {
   flex-direction: column;
   padding: 5rem 6rem;
   margin-right: 5rem;
-  width: 50%;
+  width: 30%;
 }
 
 .link-list h2 {
@@ -124,6 +124,7 @@ body {
 
 .row__col {
   margin: 1rem auto;
+  position: relative;
 }
 
 .row__col a {
@@ -144,6 +145,16 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
   color: #fff;
+}
+
+.row__col .cross {
+  font-size: 1rem;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  right: -2rem;
+  top: 0;
+  cursor: pointer;
 }
 
 .buttons {

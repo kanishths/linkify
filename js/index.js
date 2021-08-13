@@ -1,5 +1,4 @@
 const username = document.querySelector("#username");
-
 const btn = document.querySelector("#submit");
 const btnDelete = document.querySelector("#delete");
 const form = document.querySelector(".link-form__form");
@@ -7,6 +6,7 @@ const row = document.querySelector(".row");
 const links = [];
 const names = [];
 
+//Creating user and checking for existing user.
 if (localStorage.getItem("linkifyUsername") === null) {
   const name = prompt("Enter Your Name?");
   username.innerHTML = `Hey, ${name}!`;
@@ -17,6 +17,7 @@ if (localStorage.getItem("linkifyUsername") === null) {
   username.innerHTML = `Hey, ${name}!`;
 }
 
+// Restoring Old Links
 if (localStorage.getItem("linkNames") !== null) {
   let nameArr = localStorage.getItem("linkNames");
   let urlArr = localStorage.getItem("linkUrl");
@@ -25,7 +26,7 @@ if (localStorage.getItem("linkNames") !== null) {
   nameArr.forEach((element, c = 0) => {
     const html = `
    <div class="row__col">
-      <a target="_blank" href="${urlArr[c]}">${element} </a> <span>&rarr; </span>
+      <a target="_blank"  class="linktag" href="${urlArr[c]}">${element}</a> <span>&rarr; </span> <span class="cross">&cross;</span>
     </div>
   `;
 
@@ -37,6 +38,7 @@ if (localStorage.getItem("linkNames") !== null) {
   });
 }
 
+//Adding New Links to current
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -51,21 +53,48 @@ form.addEventListener("submit", (e) => {
 
     const html = `
    <div class="row__col">
-      <a target="_blank" href="${linkUrl}">${linkName} </a> <span>&rarr; </span>
+      <a target="_blank" class="linktag"  href="${linkUrl}">${linkName}</a> <span>&rarr; </span> <span class="cross">&cross;</span>
     </div>
   `;
 
     row.insertAdjacentHTML("beforeend", html);
     localStorage.setItem("linkNames", names);
     localStorage.setItem("linkUrl", links);
+    location.reload();
   } else {
     alert("name already taken");
   }
 });
 
+//Deleting Account and clearling local storage
 btnDelete.addEventListener("click", () => {
   localStorage.removeItem("linkNames");
   localStorage.removeItem("linkUrl");
   localStorage.removeItem("linkifyUsername");
   location.reload();
+});
+
+//Deleting Selected Link
+const crosses = document.querySelectorAll(".cross");
+crosses.forEach((cross) => {
+  cross.addEventListener("click", (e) => {
+    e.preventDefault();
+    const parentEl = e.target.parentElement;
+    const toDelete = parentEl.querySelector(".linktag");
+    let toDeleteName = toDelete.innerHTML;
+    let toDeleteUrl = toDelete.href;
+    const found = names.findIndex((el) => el === toDeleteName);
+    if (names.length === 1) {
+      localStorage.removeItem("linkUrl");
+      localStorage.removeItem("linkNames");
+      location.reload();
+    } else {
+      parentEl.innerHTML = "";
+      names.splice(found, 1);
+      links.splice(found, 1);
+      localStorage.setItem("linkNames", names);
+      localStorage.setItem("linkUrl", links);
+      location.reload();
+    }
+  });
 });
