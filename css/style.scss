@@ -199,6 +199,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   .nav {
+    padding: 2rem 0;
     &__logo {
       & img {
         width: 5rem;
@@ -210,12 +211,29 @@ body {
     }
   }
   .link-form {
+    padding: 5rem 0;
+    width: fit-content;
     &__heading {
       font-size: 2rem;
     }
+    &__form {
+      width: 100%;
+      & #submit {
+        align-self: center;
+        width: 70%;
+        font-size: 1.4rem;
+      }
+    }
   }
-  .addbtn {
-    align-self: center;
-    width: 20rem;
+  .link-list {
+    padding: 5rem 0;
+    margin: auto;
+    & h2 {
+      font-size: 2rem;
+    }
+  }
+  #delete {
+    width: 70%;
+    font-size: 1.4rem;
   }
 }
