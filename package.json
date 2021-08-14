@@ -4,7 +4,7 @@
   "description": "Links Saving App",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node js/index.js"
   },
   "repository": {
     "type": "git",
