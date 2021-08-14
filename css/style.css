@@ -298,5 +298,15 @@ body {
     width: 70%;
     font-size: 1.4rem;
   }
+  .row__col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    padding-left: 0;
+  }
+  .row__col a {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
