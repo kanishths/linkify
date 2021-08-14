@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  position: relative;
   background-image: radial-gradient(farthest-corner at 20% 45%, #480528, #14274a);
   background-size: cover;
   background-repeat: no-repeat;
@@ -182,6 +183,63 @@ body {
 #delete:active {
   transform: translateY(0);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right bottom, #14274a, #480528);
+  width: 80rem;
+  height: 30rem;
+}
+
+.modal__box {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 50%;
+}
+
+.modal__box h2 {
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+
+.modal__box input {
+  width: 50%;
+  margin: auto;
+  padding: 2rem 3rem;
+  border: none;
+  outline: none;
+  border-radius: 2.5rem;
+  margin-top: 2rem;
+}
+
+.modal__box button {
+  width: 30%;
+  margin: auto;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 2.5rem;
+  cursor: pointer;
+}
+
+.modal__box span {
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  font-family: "Times New Roman", Times, serif;
 }
 
 @media only screen and (max-width: 1200px) {

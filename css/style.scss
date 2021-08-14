@@ -13,6 +13,7 @@ $color-white: #fff;
 $color-black: #000;
 
 body {
+  position: relative;
   background-image: radial-gradient(
     farthest-corner at 20% 45%,
     $color-primary,
@@ -185,6 +186,64 @@ body {
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.7);
   }
 }
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-secondary,
+    $color-primary
+  );
+  width: 80rem;
+  height: 30rem;
+  &__box {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 50%;
+
+    & h2 {
+      font-size: 3rem;
+      text-align: center;
+      color: $color-white;
+      margin-top: -2rem;
+      margin-bottom: 2rem;
+    }
+    & input {
+      width: 50%;
+      margin: auto;
+      padding: 2rem 3rem;
+      border: none;
+      outline: none;
+      border-radius: 2.5rem;
+      margin-top: 2rem;
+    }
+    & button {
+      width: 30%;
+      margin: auto;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      border: none;
+      outline: none;
+      border-radius: 2.5rem;
+      cursor: pointer;
+    }
+    & span {
+      font-size: 3rem;
+      position: absolute;
+      top: 0;
+      right: 2rem;
+      font-family: "Times New Roman", Times, serif;
+    }
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .main {
     display: flex;
