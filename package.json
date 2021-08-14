@@ -1,0 +1,19 @@
+{
+  "name": "linkify",
+  "version": "1.0.0",
+  "description": "Links Saving App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanishths/linkify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanishths/linkify/issues"
+  },
+  "homepage": "https://github.com/kanishths/linkify#readme"
+}
